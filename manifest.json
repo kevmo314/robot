@@ -1,0 +1,31 @@
+{
+  "name": "Resy Automatic Booking Tool",
+  "description": "",
+  "author": "Kevin Wang <kevmo314@gmail.com>",
+  "homepage_url": "https://github.com/kevmo314/robot",
+  "version": "1.0",
+  "manifest_version": 3,
+  "web_accessible_resources": [
+    {
+      "resources": ["script.js"],
+      "matches": ["https://*.resy.com/*"]
+    }
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://*.resy.com/*"],
+      "css": ["style.css"],
+      "js": ["inject.js"]
+    },
+    {
+      "matches": ["https://*.resy.com/*"],
+      "js": ["hijack.js"],
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["https://widgets.resy.com/*"],
+      "all_frames": true,
+      "js": ["widget.js"]
+    }
+  ]
+}

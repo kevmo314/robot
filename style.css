@@ -1,0 +1,4 @@
+div.date.outside-window {
+    cursor: pointer !important;
+    border: 1px solid orange !important;
+}
